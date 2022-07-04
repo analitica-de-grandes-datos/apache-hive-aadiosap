@@ -15,7 +15,7 @@ Escriba el resultado a la carpeta `output` de directorio de trabajo.
         f1 STRING,
         f2 DATE,
         f3 INT)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY '/t'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 TBLPROPERTIES ('skip.header.line.count'='0');
 
 LOAD DATA LOCAL INPATH 'data.tsv' OVERWRITE INTO TABLE T_P2;
