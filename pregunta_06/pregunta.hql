@@ -76,7 +76,7 @@ LOAD DATA LOCAL INPATH 'data1.csv' INTO TABLE tbl1;
 
 CREATE TABLE TP_6 AS
 SELECT
-    c5
+    UPPER(c5) AS f5
 FROM
     tbl0;
 
