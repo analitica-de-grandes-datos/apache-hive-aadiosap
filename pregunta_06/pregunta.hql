@@ -8,8 +8,7 @@ elementos en mayuscula.
 
 Apache Hive se ejecutará en modo local (sin HDFS).
 
-Escriba el resultado a la carpeta `output` de directorio de trabajo.
-/*
+Escriba el resultado a la carpeta `output` de directorio de 
     >>> Escriba su respuesta a partir de este punto <<<
 */
 CREATE TABLE tbl0 (
@@ -24,7 +23,7 @@ COLLECTION ITEMS TERMINATED BY ':'
 MAP KEYS TERMINATED BY '#' LINES TERMINATED BY '\n';
 LOAD DATA LOCAL INPATH 'data0.csv' INTO TABLE tbl0;
 
-CREATE TABLE TP_6 AS
+CREATE TABLE PT_6_ AS
 SELECT
     UPPER(c5) AS f5
 FROM
@@ -32,6 +31,6 @@ FROM
 
 INSERT OVERWRITE LOCAL DIRECTORY './output'
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-SELECT * FROM TP_6;
+SELECT * FROM PT_6_;
 
 
