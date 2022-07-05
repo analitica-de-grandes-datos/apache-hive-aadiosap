@@ -13,4 +13,25 @@ Escriba el resultado a la carpeta `output` de directorio de trabajo.
 
         >>> Escriba su respuesta a partir de este punto <<<
 */
+CREATE TABLE Data (
+       f1 STRING,
+       f2 DATE,
+       f3 INT)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+TBLPROPERTIES('skip.header.line.count'='0');
 
+LOAD DATA LOCAL INPATH 'data.tsv' OVERWRITE INTO TABLE Data;
+
+CREATE TABLE conteo AS
+SELECT
+    f1, COUNT(1) AS conteo
+FROM
+    Data
+GROUP BY
+    f1
+ORDER BY
+    f1;
+
+INSERT OVERWRITE LOCAL DIRECTORY './output'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+SELECT * FROM conteo;
