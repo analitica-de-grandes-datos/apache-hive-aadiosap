@@ -13,6 +13,7 @@ Escriba el resultado a la carpeta `output` de directorio de trabajo.
 
     >>> Escriba su respuesta a partir de este punto <<<
 */
+
 CREATE TABLE tbl0 (
     c1 INT,
     c2 STRING,
@@ -25,7 +26,7 @@ COLLECTION ITEMS TERMINATED BY ':'
 MAP KEYS TERMINATED BY '#' LINES TERMINATED BY '\n';
 LOAD DATA LOCAL INPATH 'data0.csv' INTO TABLE tbl0;
 
-CREATE TABLE TP_8 AS
+CREATE TABLE TP_8_ AS
 SELECT
     c2, key, value
 FROM
@@ -38,5 +39,5 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 SELECT
     c2, SUM(value)
 FROM
-    TP_8
+    TP_8_
 GROUP BY c2;
